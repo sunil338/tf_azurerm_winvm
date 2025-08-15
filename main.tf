@@ -23,7 +23,7 @@ subscription_id="34a1c0d5-ab81-462c-89db-795e1572cd70"
 
 variable "admin_password" { sensitive = true }
 variable "allowed_ip" { default = "0.0.0.0/0" }
-variable "location" { default = "poland" }
+variable "location" { default = "polandcentral" }
 variable "prefix"   { default = "winvm" }
 
 resource "azurerm_resource_group" "rg" {
