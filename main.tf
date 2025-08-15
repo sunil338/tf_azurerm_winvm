@@ -52,6 +52,7 @@ resource "azurerm_network_security_group" "nsg" {
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"
+    source_port_range          = "*"
     destination_port_range     = "3389"
     source_address_prefix      = var.allowed_ip
     destination_address_prefix = "*"
@@ -63,6 +64,7 @@ resource "azurerm_network_security_group" "nsg" {
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"
+    source_port_range          = "*"
     destination_port_range     = "5986"
     source_address_prefix      = var.allowed_ip
     destination_address_prefix = "*"
