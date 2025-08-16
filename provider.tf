@@ -1,17 +1,18 @@
 terraform {
-  cloud {
-    organization = "sunilmuradi"
-    workspaces {
-      name = "tf_cloud-with-ansible_playbook"
-    }
-  }
+  required_version = ">= 1.3.0"
 
-  terraform {
-  required_version = ">= 1.5.0"
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~> 3.115"
+      version = ">= 3.0.0"
+    }
+  }
+
+  backend "remote" {
+    hostname     = "app.terraform.io"
+    organization = "sunilmuradi"          # <-- replace
+    workspaces {
+      name = "tf_cloud-with-ansible_playbook"            # <-- replace or create workspace with this name
     }
   }
 }
